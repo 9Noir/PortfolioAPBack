@@ -58,7 +58,7 @@ public class AplicationSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-        http
+        http.cors().and()
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/api/**").permitAll()
